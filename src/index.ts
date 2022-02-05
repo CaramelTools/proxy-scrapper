@@ -24,6 +24,10 @@ async function scrapProxies() {
     const rawProxies = ["https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"];
     let proxiesData: string[] = [];
     let proxiesDataSplit: any;
+    var totalProcessed = {
+        totalSkipped: 0,
+        totalAdded: 0
+    }
 
     for (let i = 0; i < rawProxies.length; i++) {
         const fetchedData = await axios.get(rawProxies[i]);
@@ -35,8 +39,24 @@ async function scrapProxies() {
     }   
 
     for (let y = 0; y < proxiesDataSplit.length; y++) {
-        seq.model("proxies").create({
-            proxy: proxiesDataSplit[y]
-        });
+        var noPort = proxiesDataSplit[y].split(":")[0]
+        var result = await seq.model("proxies").findAll({
+            where: {
+                proxy: noPort
+            },
+            limit: 1
+        })
+        if(result[0] === undefined) {
+            seq.model("proxies").create({
+                proxy: noPort
+            });
+            totalProcessed.totalAdded = totalProcessed.totalAdded + 1
+        } else {
+            totalProcessed.totalSkipped = totalProcessed.totalSkipped + 1
+        }
     }
+    console.log(`
+    👍 Added ${totalProcessed.totalAdded} new proxies
+    🔥 Skipped ${totalProcessed.totalSkipped} proxies
+    `)
 }
