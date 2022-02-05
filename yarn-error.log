@@ -1,0 +1,46 @@
+Arguments: 
+  /Users/zero/.nvm/versions/node/v12.22.0/bin/node /Users/zero/.nvm/versions/node/v12.22.0/bin/yarn
+
+PATH: 
+  /Users/zero/.rvm/gems/ruby-3.0.0/bin:/Users/zero/.rvm/gems/ruby-3.0.0@global/bin:/Users/zero/.rvm/rubies/ruby-3.0.0/bin:/Users/zero/.nvm/versions/node/v12.22.0/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/Users/zero/.rvm/gems/ruby-3.0.0/bin:/Users/zero/.rvm/gems/ruby-3.0.0@global/bin:/Users/zero/.rvm/rubies/ruby-3.0.0/bin:/Users/zero/.nvm/versions/node/v12.22.0/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/zero/.cargo/bin:/Users/zero/.rvm/bin:/Users/zero/.rvm/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  12.22.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.34.tgz: incorrect data check
+      at Zlib.zlibOnError [as onerror] (zlib.js:182:17)
+
+npm manifest: 
+  {
+    "name": "proxyscrapper",
+    "version": "1.0.0",
+    "description": "A simple proxy scrapper",
+    "main": "index.js",
+    "author": "fowled",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+      "@types/node": "*",
+      "nodemon": "^2.0.15",
+      "ts-node": "^10.4.0",
+      "typescript": "^4.5.5"
+    },
+    "dependencies": {
+      "axios": "^0.25.0",
+      "sequelize": "^6.15.0",
+      "sqlite3": "^5.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
